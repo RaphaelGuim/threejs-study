@@ -20,23 +20,10 @@ loadingManager.onProgress = ()=>{
 loadingManager.onLoad = ()=>{
   console.log("onLoad")
 }
-loadingManager.onError = ()=>{
-  console.log("onError")
+loadingManager.onError = (err)=>{
+  console.log("onError",err)
 }
-
-const textureLoader = new THREE.TextureLoader(loadingManager)
-const colorTexture = textureLoader.load('textures/color.jpg')
-const alphaTexture = textureLoader.load('textures/alpha.jpg')
-const heigthTexture = textureLoader.load('textures/height.png')
-const metalTexture = textureLoader.load('textures/metal.jpg')
-const normalTexture = textureLoader.load('textures/normal.jpg')
 
  
-export {
-  colorTexture,
-  alphaTexture,
-  heigthTexture,
-  metalTexture,
-  normalTexture
-  
-}
+ 
+export default new THREE.TextureLoader(loadingManager) 
